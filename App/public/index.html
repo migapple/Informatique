@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#06080f;--bg2:#0d1120;--bg3:#141828;--gold:#c9a84c;--gold2:#e8c97a;--text:#ddd8cc;--muted:#7a7669;--border:#2a2d3a;--accent:#0d1120}
+:root{--bg:#06080f;--bg2:#0d1120;--bg3:#141828;--gold:#c9a84c;--gold2:#e8c97a;--text:#ddd8cc;--muted:#7a7669;--border:#2a2d3a;--accent:#0d1120;--fs:1}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;overflow:hidden;background:#06080f}
 body{font-family:'Cormorant Garamond',Georgia,serif;color:var(--text)}
@@ -29,19 +29,19 @@ body{font-family:'Cormorant Garamond',Georgia,serif;color:var(--text)}
 .chrono-card{background:var(--bg2);border-left:3px solid var(--gold);margin:8px 12px;border-radius:6px;padding:12px 14px}
 .chrono-top{display:flex;align-items:flex-start;gap:10px}
 .chrono-emoji{font-size:24px;flex-shrink:0;line-height:1}
-.chrono-date{font-family:'IM Fell English',serif;font-size:13px;color:var(--gold2);margin-bottom:2px}
-.chrono-name{font-size:16px;font-weight:600;color:var(--text);line-height:1.2}
-.chrono-body{font-size:13px;color:var(--muted);line-height:1.6;margin-top:8px}
+.chrono-date{font-family:'IM Fell English',serif;font-size:calc(13px * var(--fs));color:var(--gold2);margin-bottom:2px}
+.chrono-name{font-size:calc(16px * var(--fs));font-weight:600;color:var(--text);line-height:1.2}
+.chrono-body{font-size:calc(13px * var(--fs));color:var(--muted);line-height:1.6;margin-top:8px}
 /* MACHINES */
 .machines-list{padding:8px 12px}
 .machine-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
 .machine-header{display:flex;gap:12px;padding:12px;cursor:pointer}
 .machine-img-wrap{width:72px;height:72px;flex-shrink:0;border-radius:8px;overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:32px}
 .machine-img-wrap img{width:100%;height:100%;object-fit:cover}
-.machine-name{font-family:'IM Fell English',serif;font-size:16px;color:var(--gold2);margin-bottom:2px}
-.machine-date{font-size:12px;color:var(--muted);margin-bottom:5px}
-.machine-short{font-size:13px;color:var(--text);line-height:1.5}
-.machine-inventor{font-size:12px;color:var(--gold);margin-top:6px;font-style:italic}
+.machine-name{font-family:'IM Fell English',serif;font-size:calc(16px * var(--fs));color:var(--gold2);margin-bottom:2px}
+.machine-date{font-size:calc(12px * var(--fs));color:var(--muted);margin-bottom:5px}
+.machine-short{font-size:calc(13px * var(--fs));color:var(--text);line-height:1.5}
+.machine-inventor{font-size:calc(12px * var(--fs));color:var(--gold);margin-top:6px;font-style:italic}
 /* DETAIL PANEL */
 .detail-panel{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:200;flex-direction:column}
 .detail-panel.open{display:flex}
@@ -51,25 +51,25 @@ body{font-family:'Cormorant Garamond',Georgia,serif;color:var(--text)}
 .detail-body{flex:1;overflow-y:auto;padding:16px;padding-bottom:calc(24px + env(safe-area-inset-bottom));-webkit-overflow-scrolling:touch}
 .detail-img{width:100%;max-height:220px;object-fit:cover;border-radius:10px;margin-bottom:16px;background:var(--bg3)}
 .detail-img-placeholder{width:100%;height:160px;border-radius:10px;margin-bottom:16px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:64px}
-.detail-date{font-family:'IM Fell English',serif;font-size:14px;color:var(--gold2);margin-bottom:4px}
-.detail-inventor{font-size:13px;color:var(--gold);font-style:italic;margin-bottom:12px}
-.detail-short{font-size:15px;font-weight:600;color:var(--text);margin-bottom:12px;line-height:1.4}
+.detail-date{font-family:'IM Fell English',serif;font-size:calc(14px * var(--fs));color:var(--gold2);margin-bottom:4px}
+.detail-inventor{font-size:calc(13px * var(--fs));color:var(--gold);font-style:italic;margin-bottom:12px}
+.detail-short{font-size:calc(15px * var(--fs));font-weight:600;color:var(--text);margin-bottom:12px;line-height:1.4}
 .detail-sep{height:1px;background:var(--border);margin:12px 0}
-.detail-text{font-size:14px;color:var(--muted);line-height:1.8}
+.detail-text{font-size:calc(14px * var(--fs));color:var(--muted);line-height:1.8}
 /* QUIZ */
 .quiz-wrap{padding:12px}
 .quiz-score-bar{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
-.quiz-score-label{font-size:13px;color:var(--muted)}
-.quiz-score-val{font-family:'IM Fell English',serif;font-size:20px;color:var(--gold)}
+.quiz-score-label{font-size:calc(13px * var(--fs));color:var(--muted)}
+.quiz-score-val{font-family:'IM Fell English',serif;font-size:calc(20px * var(--fs));color:var(--gold)}
 .quiz-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px}
-.quiz-num{font-size:11px;color:var(--muted);margin-bottom:6px}
-.quiz-q{font-size:15px;font-weight:600;line-height:1.5;margin-bottom:12px;color:var(--text)}
+.quiz-num{font-size:calc(11px * var(--fs));color:var(--muted);margin-bottom:6px}
+.quiz-q{font-size:calc(15px * var(--fs));font-weight:600;line-height:1.5;margin-bottom:12px;color:var(--text)}
 .quiz-answers{display:flex;flex-direction:column;gap:8px}
-.quiz-answer{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:14px;color:var(--text);cursor:pointer;text-align:left;font-family:inherit;transition:all .2s;width:100%}
+.quiz-answer{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:calc(14px * var(--fs));color:var(--text);cursor:pointer;text-align:left;font-family:inherit;transition:all .2s;width:100%}
 .quiz-answer.correct{background:#1a3a1f;border-color:#4a7c59;color:#8abf9a}
 .quiz-answer.wrong{background:#3a1a1a;border-color:#7c4a4a;color:#bf8a8a}
 .quiz-answer.revealed{pointer-events:none}
-.quiz-reset{width:100%;background:var(--accent);border:1px solid var(--gold);border-radius:8px;padding:12px;font-family:'IM Fell English',serif;font-size:16px;color:var(--gold);cursor:pointer;margin-top:8px}
+.quiz-reset{width:100%;background:var(--accent);border:1px solid var(--gold);border-radius:8px;padding:12px;font-family:'IM Fell English',serif;font-size:calc(16px * var(--fs));color:var(--gold);cursor:pointer;margin-top:8px}
 /* SETTINGS */
 .settings-panel{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:100;flex-direction:column;overflow-y:auto}
 .settings-panel.open{display:flex}
@@ -84,6 +84,11 @@ body{font-family:'Cormorant Garamond',Georgia,serif;color:var(--text)}
 .app-icon-wrap img{width:100%;height:100%;object-fit:cover;border-radius:12px}
 .app-name-lbl{font-size:9px;color:var(--muted);text-align:center;line-height:1.3}
 .settings-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-size:14px;cursor:pointer;font-family:inherit;width:100%;text-align:left;margin-bottom:8px}
+/* FONT SIZE */
+.font-size-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px}
+.font-size-label{font-size:13px;color:var(--muted);flex:1}
+.font-btn{background:var(--bg3);border:1px solid var(--border);border-radius:8px;width:36px;height:36px;font-size:18px;color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:'IM Fell English',serif}
+.font-preview{font-size:14px;color:var(--text);min-width:36px;text-align:center}
 .badge-wrap{margin-top:16px;text-align:center}
 .badge-wrap img{height:40px}
 </style>
@@ -133,6 +138,13 @@ body{font-family:'Cormorant Garamond',Georgia,serif;color:var(--text)}
     <div class="settings-title" id="settingsTitleEl">Autres Apps</div>
   </div>
   <div class="settings-body">
+    <div class="settings-section-title" id="settingsFontLbl">Taille du texte</div>
+    <div class="font-size-row">
+      <span class="font-size-label" id="settingsFontLabel">Taille du texte</span>
+      <button class="font-btn" onclick="changeFontSize(-0.1)">A−</button>
+      <span class="font-preview" id="fontPreview">100%</span>
+      <button class="font-btn" onclick="changeFontSize(+0.1)">A+</button>
+    </div>
     <div class="settings-section-title" id="settingsAppsLbl">Mes applications</div>
     <div class="apps-grid" id="appsGrid"></div>
     <div class="badge-wrap"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr" alt="App Store"></div>
@@ -609,6 +621,8 @@ function resetQuiz(){quizScore=0;quizAnswered=0;quizOrder=QUIZ.map((_,i)=>i).sor
 
 // ── SETTINGS ─────────────────────────────────────────────────────
 const OTHER_APPS=[
+                  {id:'6767135193',name:'Auteurs de BD'},
+                  {id:'6766261703',name:'Histoire Micro-informatique'},
   {id:'6763507194',name:'Hotels Rooftop',emoji:'🏨'},{id:'6762618424',name:'Ponts du Monde',emoji:'🌉'},
   {id:'6763076110',name:'Paquebots',emoji:'🚢'},{id:'6763069304',name:'Avions de Légende',emoji:'✈️'},
   {id:'6763071567',name:'Voitures Légende',emoji:'🚗'},{id:'6762077646',name:'Flip Board',emoji:'🎮'},
@@ -651,6 +665,25 @@ function loadApps(){
 
 renderChrono();
 renderMachines();
+
+// ── FONT SIZE ────────────────────────────────────────────────────
+let fontScale = parseFloat(localStorage.getItem('fs') || '1.0');
+const isIPad = navigator.userAgent.includes('iPad') ||
+               (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+if(isIPad && !localStorage.getItem('fs')) fontScale = 1.3;
+applyFontScale();
+
+function applyFontScale(){
+  document.documentElement.style.setProperty('--fs', fontScale);
+  const pct = Math.round(fontScale * 100) + '%';
+  const el = document.getElementById('fontPreview');
+  if(el) el.textContent = pct;
+  localStorage.setItem('fs', fontScale);
+}
+function changeFontSize(delta){
+  fontScale = Math.min(1.8, Math.max(0.8, Math.round((fontScale + delta) * 10) / 10));
+  applyFontScale();
+}
 </script>
 </body>
 </html>
